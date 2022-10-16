@@ -3,6 +3,8 @@ package com.springdemo.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.SEQUENCE;
+
+import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
@@ -20,9 +22,27 @@ public class Person {
 			generator = "person_sequence"
 			
 	)
+	@Column(
+			name= "id",
+			updatable = false
+			)
 	private int id;
+	@Column(
+			name= "nic",
+			nullable = false
+			)
 	private String nic;
+	@Column(
+			name= "first_name",
+			nullable = false,
+			columnDefinition = "TEXT"
+			)
 	private String firstName;
+	@Column(
+			name= "first_name",
+			nullable = false,
+			columnDefinition = "TEXT"
+			)
 	private String lastName;
 	private int mobileNumber;
 	
