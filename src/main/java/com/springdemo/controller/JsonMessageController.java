@@ -9,29 +9,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springddemo.publisher.RabbitMQJsonProducer;
 import com.springddemo.publisher.RabbitMQProducer;
 import com.springdemo.dto.User;
 
 @RestController
-@RequestMapping("/messager/")
-public class MessageController extends BaseController{
-	private RabbitMQProducer producer;
+@RequestMapping("/jsonmessager/")
+public class JsonMessageController extends BaseController{
+	private RabbitMQJsonProducer jsonproducer;
 	
 	@Autowired
-	public MessageController(RabbitMQProducer producer) {
-		super();
-		this.producer = producer;
+	public JsonMessageController(RabbitMQJsonProducer producer) {
+		this.jsonproducer = producer;
 	}
 	
-	@PostMapping("/message/publish")
-	public ResponseEntity<String> sendMessage(@RequestParam("message") String message){
-		producer.sendMessage(message);
-		return ResponseEntity.ok("Message delivered to RabbitMQ");
-	}
-	@PostMapping("/json/user")
+	@PostMapping("/user/publish")
 	public ResponseEntity<String> sendMessage(@RequestBody User user){
-		
-		return ResponseEntity.ok("Message delivered to RabbitMQ");
+		jsonproducer.sendUserJSON(user);
+		return ResponseEntity.ok("JSON delivered to RabbitMQ. (JSON: " + user +" )");
 	}
 
 }
