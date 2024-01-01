@@ -1,0 +1,19 @@
+spring:
+    datasource:
+        password: admin
+        url: jdbc:postgresql://localhost:5432/db
+        username: postgres
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+        queue:
+          name: demoqueue
+        jsonqueue:
+          name: jsonqueue
+        exchange:
+          name: demoexchange
+        routing:
+          key: demokey
+          json: jsonkey
