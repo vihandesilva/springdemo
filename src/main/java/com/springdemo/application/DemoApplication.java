@@ -1,5 +1,6 @@
 package com.springdemo.application;
 
+<<<<<<< HEAD
 
 import org.springframework.amqp.rabbit.connection.Connection;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -32,6 +33,18 @@ public class DemoApplication {
 	public RabbitMQJsonProducer rabbitMQJsonProducer() {
 		return new RabbitMQJsonProducer();
 	}
+=======
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+@EnableAutoConfiguration
+@ComponentScan
+@SpringBootApplication
+public class DemoApplication {
+
+>>>>>>> 28e75aa (minor changes in controllers)
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}

@@ -1,6 +1,6 @@
 spring:
     datasource:
-        password: admin
+        password: root
         url: jdbc:postgresql://localhost:5432/db
         username: postgres
     rabbitmq:
@@ -19,7 +19,7 @@ spring:
           json: jsonkey
     jpa:
         hibernate:
-          ddl-auto: create-drop
+          ddl-auto: create
         show-sql: true
         properties:
           hibernate:

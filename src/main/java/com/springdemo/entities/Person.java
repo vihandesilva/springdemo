@@ -7,8 +7,10 @@ import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-@Entity(name="person")
+@Entity
+@Table(name="person")
 public class Person {
 	
 	@Id
@@ -29,7 +31,8 @@ public class Person {
 	private int id;
 	@Column(
 			name= "nic",
-			nullable = false
+			nullable = false,
+			unique = true
 			)
 	private String nic;
 	@Column(
@@ -39,11 +42,14 @@ public class Person {
 			)
 	private String firstName;
 	@Column(
-			name= "first_name",
+			name= "last_name",
 			nullable = false,
 			columnDefinition = "TEXT"
 			)
 	private String lastName;
+	
+	@Column(name= "mobile_number",
+			columnDefinition = "TEXT")
 	private int mobileNumber;
 	
 
