@@ -52,7 +52,13 @@ public class Person {
 			columnDefinition = "TEXT")
 	private int mobileNumber;
 	
-
+	public Person(String nic, String firstName, String lastName, int mobileNumber) {
+		this.nic = nic;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mobileNumber = mobileNumber;
+	}
+	
 	public int getId() {
 		return id;
 	}

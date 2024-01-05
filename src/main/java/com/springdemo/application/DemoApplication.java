@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.r2dbc.ConnectionFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.springddemo.publisher.RabbitMQJsonProducer;
 import com.springddemo.publisher.RabbitMQProducer;
@@ -19,9 +20,9 @@ import com.springdemo.config.RabbitMQConfig;
 import com.springdemo.controller.MessageController;
 
 @EnableAutoConfiguration
-@ComponentScan
+@EnableJpaRepositories
 @SpringBootApplication
-@ComponentScan(basePackages = "com.springdemo.controller")
+@ComponentScan(basePackages = {"com.springdemo.controller","com.springdemo.repositories", "com.springdemo.service"})
 public class DemoApplication {
 	
 	@Bean
@@ -35,6 +36,10 @@ public class DemoApplication {
 	@Bean
 	public RabbitMQJsonProducer rabbitMQJsonProducer() {
 		return new RabbitMQJsonProducer();
+	}
+	
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 
