@@ -1,37 +1,51 @@
-HELP.md
-.gradle
+### Gradle ###
+# Ignore Gradle build and cache directories
+.gradle/
 build/
+out/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+# Ignore Gradle dependency caches (improves performance)
+**/build/
+**/bin/
+**/.gradle/
+
+# Ignore Gradle log files
+gradle.log
 
 ### IntelliJ IDEA ###
-.idea
-*.iws
+.idea/
 *.iml
 *.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+*.iws
+.idea_modules/
+*.xml
+atlassian-ide-plugin.xml
+# Ignore coverage reports
+coverage/
+coverage-reports/
+# Ignore IntelliJ generated files
+*.shelf/
+.DS_Store
+
+### Eclipse ###
+.project
+.classpath
+.settings/
+bin/
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+.nbm/
 
 ### VS Code ###
 .vscode/
+
+### OS-specific ###
+.DS_Store
+Thumbs.db
+ehthumbs.db
